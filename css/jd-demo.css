@@ -125,6 +125,7 @@ a
 {
    display: block;
     position: absolute;
+    overflow: hidden;
 }
 
 
@@ -260,20 +261,153 @@ a
     width: 270px;
     height: 60px;
     background: url(../img/logo.png);
+}
+
+#search-2014
+{
+    position: relative;
+    z-index: 11;
+    float: left;
+    width: 462px;
+    margin-top: 25px;
 
 
 }
 
 
+#search-2014 .form
+{
+    /*width: auto;*/
+    width: 538px;
+    height: 36px;
+
+}
+
+.search-color
+{
+    color: rgb(153,153,153);
+}
+
+#search-2014 .text
+{
+    width: 446px;
+    float:left;
+    height: 24px;
+    line-height: 24px;
+    color: #666666;
+    padding: 4px;
+    margin-bottom: 4px;
+    border-width: 2px 0 2px 2px;
+    border-color: #b61d1d;
+    border-style:solid;
+    outline:0;
+    font-size: 14px;
+    font-family: "微软雅黑";
+
+}
+
+input
+{
+
+    cursor: auto;
+    background-color: white;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    cursor: auto;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
 
 
+}
 
 
+input,botton
+{
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    margin: 0px;
+
+}
+
+button
+{
+    align-items: flex-start;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
 
 
+}
 
 
+#search-2014 .button1
+{
+    float: left;
+    width: 82px;
+    height: 36px;
+    background: #b61d1d;
+    border: none;
+    line-height: 1;
+    color: white;
+    font: 16px "微软雅黑";
+    cursor: pointer;
 
+}
+
+#search-2014 .cw-icon i
+{
+    top: 0px;
+    left: 0px;
+    width: 82px;
+    height: 36px;
+
+}
+
+
+#settleup-2014
+{
+    margin-right: 65px;
+    float: right;
+    z-index: 11;
+    height: 36px;
+    margin-top: 25px;
+}
+
+
+#settleup-2014 .cw-icon
+{
+    width: 75px;
+    height: 34px;
+    line-height: 34px;
+    background: #f9f9f9;
+    border: 1px solid #dfdfdf;
+    padding: 0 28px 0 36px;
+    text-align: center;
+
+}
+/*
+#settleup-2014 .ci-left
+{
+    top: 9px;
+    left: 18px;
+    width: 18px;
+    height: 16px;
+    background: url(../img/shop-logo.png) 0 -91px no-repeat;
+
+}
+
+
+*/
 
 
 
