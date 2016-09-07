@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+//页面加载完成
+$(
+function()
+{}
+)
+
+1.	使用Jquery需要添加<script src=”jquery-1.10.2.min.js”></script>，
+可在头部添加。然后再在该语句下文添加写用Jquery的js文件的链接，例如<script src=”test.js”></script>
+
+2.
+
+$(
+function()
+{
+$("#id").click(function()
+{
+alert("hello");)
+})
+}
+)
+
+3. dom对象编程jquery
+
+$(document.getElementById("button1")).click(function(){alert("hello");})
+
+
+4. jquery编程dom
+
+$("#botton1")[0].onclick=function()
+{alert("hello");}
+
+5. 标签选择器
+$("p").css("color","red");   获取所有p
+$("p:odd").css("color","red");                                  偶数行
+$("p:even").css("color","green");                                奇数行
+$("p:first").css("color","blue");                            页面中第一个P标签
+$("p:last").css("color","blue");                           页面中最后一个P标签
+$("p:first-child").css("color","blue");                   p标签是父标签的第一个孩子时
+$("p:nth-child（1/2/3/n）").css("color","blue");            p标签是父标签的第n个孩子时
+$("p:nth-of-type（1/2/3/n）").css("color","blue");          父标签的第一个P标签
+
+
+6.高级选择器
+$(div:has(a)).css("color","red");               设置有子元素为a的DIV标签
+$("a[title]").css("color","red");                设置有title属性的a标签
+
+$("a[href^=ww]").css("color","red");       设置有href属性,且该属性以www开头的a标签
+$("a[href$=ww]").css("color","red");       设置有href属性,且该属性以www结尾的a标签
+$("a[href='www.baidu.com']").css("color","red");       设置有href属性,且该属性等于www.baidu.com的a标签
+$("a[href*=com]").css("color","red");       设置有href属性,且该属性包含com的a标签
+
+
+7.属性值选择器
+$("input[type=button]").attr("disabled",disabled");    将所有botton的disabled属性设置为禁用
+$(":button").attr("disabled",disabled");               将所有botton的disabled属性设置为禁用
+$("input[disabled=disabled]").css("color","red");      获取所有disabled的元素
+$(":disabled").css("color","red");      获取所有disabled的元素
+
+
+8.  获取标签元素
+
+$("div").css("color","red");   获取所有div
+$("div").eq(2).css("color","red");   获取第三个div
+$("di:eq(0)").css("color","red");   获取第1个div
+$("di:gt(3)").css("color","red");      获取第3个div后main的所有div 元素   注意 gt不能写在外面
+$("div").eq(2).sibling().css("color","red");   获取第3个div的所有兄弟元素，不包括第三个div
+$("div").not(:"eq(2)").css("color","red");      获取除了第3个div外的所有div标签
+$("div").filter(:eq(2)).css("color","red");   获取第三个div标签，使用filter语法
+
+
+
+9. 获取类标签
+
+//找父级元素
+$(".d1").css("color","red");   获取所有使用d1类的元素
+
+$(".d1").parent().css("color","red");    获取所有使用d1类的元素的直接父元素
+
+$(".d1").parent().parent().css("color","red");    获取d1类元素的上一级的上一级元素
+
+$(".d1").parents().css("color","red");   获取所有使用d1类的元素的所有父元素，不仅仅是父元素
+
+
+//找子元素
+$(".d1").children().css("color","red");   获取所有使用d1类的元素的直接子元素
+
+//找同级兄弟元素
+$(".d1").prev().css("color","red");  获取所有使用d1类的元素的同级的上一个元素
+
+$(".d1").prevAll().css("color","red");  获取所有使用d1类的元素同级的上面的元素
+
+
+$(".d1").next().css("color","red");  获取所有使用d1类的元素的同级的下一个元素
+
+$(".d1").nextAll().css("color","red");  获取所有使用d1类的元素同级的下面的元素
+
+
+10.获取个数
+$("div").size();    获取元素个数
+
+
+11. 设置样式
+
+设置多个样式
+$("div").css({"color":"red","font-size":"30px"});   类似于直接使用内部style <div  style="color: red"> </div>
+$("div").addClass("新增样式1  新增样式2")；  样式之间使用空格  要.CSS文件中定义 新增样式1和2
+
+增加样式
+$("div").addClass("新增样式");    需要.CSS文件中定义 新增样式
+
+
+若有样式为 .dir_key  ，则使用方法为：
+addClass("dir_"+key);
+
+
+移除样式
+$("div").removeClass("样式1")      移除样式
+
+在某个元素里面寻找某个元素
+$(".class1").find("p").css("color","red");   在使用了.class1样式的元素内寻找P元素
+
+
+12. Jquery链  同时对某一个对象执行多个操作
+
+$("div").addClass("c1).filter( function(index){return index==1||$(this).attr("id")=="d3";} ).addClass("c2");
+给所有DIV设置样式1，然后过滤出索引=1，或者id=d3的元素，并将其样式设置为C2
+
+$("div").find("p").addClass("c2").addClass("c1");
+在DIV中找到P标签，并设置样式为C2和C1
+
+$("div").find("p").addClass("c2").end().addClass("c1");
+//end()是当前结果集的上一个结果集，即$("div")；即将$("div")样式为C1
+
+$("div").find("p").addClass("c2").andSelf().addClass("c1");
+//andSelf()是获取当前对象，以及当前对象的上一个结果集
+
+
+13.获取属性值
+$("p").attr("id");   获取P标签的ID
+
+14.  设置属性值
+$("p").attr("title"，“p1”);  将title设置为p1
+
+设置多个属性
+$("p").attr("title":“p1”,"id":"p2");   将title设置为p1，将id设置为P2
+
+14.  获取内容
+$("div").html();    可将DIV内的内容全部获取，包括子标签
+$("div").text();      可将DIV内的文本内容全部获取，不包括标签及标签符号
+
+15. 设置内容
+$("div").text(“你是谁”);
+$("div").html(“<p>你说谁</p>”);
+
+15.判断是否含有某样式， 返回值是布尔值
+$("#div1").hasClass("d1");     查询ID为div1的元素是否具备样式d1
+
+
+15.是否是某标签， 返回值是布尔值
+$("#div1").is("div");     判断ID为div1的元素是否是DIV元素
+
+
+16.在某元素内增加内容
+$("#div1").append("<p>你说呢</p>")；
+效果为：
+<div #div1>
+    <p>
+        你说呢
+    </p>
+</div>
+
+方法二：把内容增加到某元素内
+$("<p>你说呢</p>")appendTo($("#div1"));
+
+
+
+
+
+
+
+17. 将元素增加到前面/后面，而不是成为子元素
+
+$("<p>你说呢</p>")insertBefore($("#div1"));
+$("<p>你说呢</p>")insertAfter($("#div1"));
+
+
+
+18.鼠标悬浮/移开时执行操作
+
+$("#div1").mouseover(function(){
+alert("鼠标悬浮");  })
+
+$("#div1").mouseout(function(){
+alert("鼠标移开");  })
+
+两者结合：
+
+$("#div1").hover
+(
+function(){alert("鼠标悬浮"); },
+function(){alert("鼠标移开"); }
+)
+
+
+
+
+
+
+background:rgba(0,0,0,0.5)  //a表示透明度为50%
+
+
+19. 显示内容
+
+$("div").eq(0).show().sibling().hide();
+将 第一个DIV显示，其余兄弟DIV元素隐藏
+
+
+
+20.获取对象的宽度和高度
+var birdSize={width:$bird.width(),height:$bird.height()  };    //获取小鸟的尺寸：宽度和 高度
+
+21.  获取对象在页面的位置
+var $bird=$("#dbird");   //找到小鸟对象
+var pos=$bird.offset();  //获取到小鸟的位置；
+
+
+22. 获取页面对象
+$(document).
+
+
+22. 获取窗口
+$(window).width();
+$(window).height();
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

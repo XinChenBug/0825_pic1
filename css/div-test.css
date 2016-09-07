@@ -1,0 +1,49 @@
+
+body{
+    background: #ffee00;
+}
+
+
+.container
+{
+    border:1px solid red;
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+}
+
+.box
+{
+    border: 1px green solid;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+
+}
+
+.pic-div
+{
+
+    display: inline;
+
+}
+
+.pic
+{
+    width: 220px;
+    height:220px;
+    background: white;
+    padding: 10px;
+
+}
+.small
+{
+    width: 40px;
+    height:40px;
+}

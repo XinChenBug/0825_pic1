@@ -1,0 +1,103 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: "微软雅黑";
+
+}
+
+a{
+    text-decoration: none;   /*清除超链接的下划线*/
+
+}
+
+li
+{
+    list-style-type: none;
+}
+
+.pic{
+width: 1200px;     /*此处的宽度很重要 因为4张图片使用float属性，所以首次打开时前3张宽度为各为100px，第四张是900，相加为1200*/
+height: 450px;
+    margin-top:70px;
+    border: 1px solid red;
+
+
+}
+
+.pic ul li{
+    float: left;
+    width: 100px;
+    height: 450px;
+
+}
+
+
+
+
+/*若几个Li,或者几个PIC作为背景，若不使用float属性，则容易从上往下排列*/
+.pic ul .pic1
+{
+    background: url("../img/1油菜花.jpg");
+
+
+}
+
+.pic2
+{
+    background: url("../img/2彩虹.jpg");
+
+}
+
+.pic3
+{
+    background: url("../img/3雪山.jpg");
+
+}
+
+
+.pic ul  .pic4
+{
+
+    background: url("../img/4荷花.jpg");
+    width: 900px;
+
+}
+
+.txt{
+
+    background: rgba(0,0,0,0.2);
+    width: 100px;
+    height: 200px;
+
+}
+
+
+.txt p{
+
+    color: white;
+    padding: 25px 10px 0px 10px;
+}
+
+
+/*当字体大小和宽度像素相同时，字体会竖直显示*/
+.txt .p1{
+    float: left;
+    font-size: 15px;
+    width: 15px;
+}
+
+.txt .p2{
+    float: left;
+    font-size: 15px;
+    width: 15px;
+}
+
+.show_all
+{
+    width: 900px;
+}
+
+.show_100
+{
+    width: 100px;
+}

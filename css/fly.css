@@ -1,0 +1,33 @@
+
+ #bird1
+ {
+     position: absolute;    /*要使小鸟能飞，则位置应脱离文档流*/
+     top: 200px;
+     left: 200px;
+
+
+ }
+
+ body
+ {
+     overflow: hidden;   /*超出窗口时，隐藏*/
+ }
+
+
+ .dir_38    /*上键*/
+ {
+
+     transform: rotate(60deg);
+ }
+
+ .dir_39  /*右键*/
+ {
+     /*沿着Y轴旋转180°*/
+     transform: rotateY(180deg);
+ }
+
+ .dir_40    /*下键*/
+ {
+
+     transform: rotate(-60deg);
+ }
